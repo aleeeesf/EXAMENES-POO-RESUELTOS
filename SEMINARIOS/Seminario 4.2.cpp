@@ -1,7 +1,8 @@
 #include <iostream>
 #include <typeinfo>
-
+#include <vector>
 using namespace std;
+/* EJERCICIO 1	*/
 /*
 class B{
 	public:
@@ -21,13 +22,12 @@ int main(){
 	D d;
 	bp = &d;
 	bp->f();
-
-
 	return 0;
 }
+
 */
-
-
+/*	EJERCICIO 2*/
+/*
 struct V {
 	virtual void fv() = 0;
 	virtual ~V() {}
@@ -43,7 +43,7 @@ struct Y : V {
 
 struct Z : V {
 	void fv() {}
-};
+};*/
 /*
 void f(V& v)
 {
@@ -61,7 +61,6 @@ void f(V& v)
 	}
 }
 */
-
 /*
 void f(X& x){
 	std::cout << "Processing object X...\n";
@@ -74,6 +73,7 @@ void f(Y& y){
 void f(V& v){
 	std::cout << "Processing object Y...\n";
 }
+
 int main(){
 
 	X x;
@@ -83,8 +83,22 @@ int main(){
 
 	return 0;
 }
-
 */
+/*
+template<typename T = byte, size_t n = 256>
+class Buffer{
+	public:
+		Buffer() = default;
+	private:
+		vector<T> buff(n);
+};
+*/
+/*
+Buffer<int,128> a;
+Buffer<> b;
+*/
+/*	EJERCICIO 4	*/
+
 template<int id> 
 class B {
 		int* p;

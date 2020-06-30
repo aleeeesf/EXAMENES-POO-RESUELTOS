@@ -12,8 +12,8 @@ int main()
  mostrar(2.0);	//MAL
  mostrar('a');
 }
-*/
 
+*/
 
 
 /*	EJERCICIO 2		*/
@@ -32,8 +32,24 @@ int main()
 */
 
 
-
 /*	EJERCICIO 3		*/
+/*
+class B{
+	public:	
+		virtual void f(){cout<<"Soy B"<<endl;}
+	
+	protected:	
+		int x_;
+};
+
+class D:public B{
+	
+	public:
+		void f(){cout<<"Soy D"<<endl;}
+	private:	
+		int y_;
+};
+*/
 /*
 class B{
 	public:	
@@ -52,9 +68,10 @@ class D:public B{
 	private:	
 		int y_;
 };
-
+*/
+/*
 int main(){
-	/*
+	
 	B b, *bp;
  	D d, *dp;
  	
@@ -69,7 +86,7 @@ int main(){
  	dp = &d;
  	cout<<"dp->f();"<<endl;
  	dp->f();
- 	*/
+}
  	
 	 
 	 
@@ -99,17 +116,26 @@ struct D: B {
  	~D() { std::cout << "Destructor de D\n"; }
  	
 };
- 
+/*
+struct E: D {
+	
+ 	E() { std::cout << "Constructor de E\n"; }
+ 	~E() { std::cout << "Destructor de E\n"; }
+ 	
+};
+*/
+/*
 int main() {
 	
- 	B *pb = new D;
+ 	B *pb = new E;
  	delete pb;
  	
 }
-
 */
 
+
 /*	EJERCICIO 5	*/
+/*
 struct A {
 
  	~A() { std::cout << "Destructor de A\n"; }
@@ -139,4 +165,4 @@ int main()
 	B *pb = new C;
 	delete pb;
 	
-}
+}*/

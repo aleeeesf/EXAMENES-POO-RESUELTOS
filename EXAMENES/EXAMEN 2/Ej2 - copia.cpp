@@ -20,6 +20,7 @@ class A {
 		void f() {
 			cout << "Metodo f() de A" << endl;
 		}
+		virtual ~A(){}
 };
 
 class B: virtual public A {
@@ -32,6 +33,7 @@ class B: virtual public A {
 		void f() {
 			cout << "Metodo f() de B" << endl;
 		}
+		virtual ~B(){}
 };
 
 class C: virtual public A {
@@ -44,7 +46,7 @@ class C: virtual public A {
 		void f() {
 			cout << "Metodo f() de C" << endl;
 		}
-
+		virtual ~C(){}
 };
 
 class D: public B, public C {
@@ -53,26 +55,22 @@ class D: public B, public C {
 		D(): x("D") {
 			cout << "Constructor de D" << endl;
 		}
-		
-
 };
 
+void probando(A* a){
+	
+	//if (A *a = dynamic_cast<A*>(a)) cout<<"Es A";
+	//else if (B *b = dynamic_cast<B*>(a)) cout<<"Es B";
+	//else if (C *c = dynamic_cast<C*>(a)) cout<<"Es C";
+	if (D *d = dynamic_cast<D*>(a)) cout<<"Es D";
+	
+}
+
 int main(){
-	
-  A *pa; 
-  B *pb; 
-  D d, *pd; 
-  
-  pd = &d; 
-  pa = &d; //si quitamos VIRTUAL no funciona
-  pa->f(); 
-  pb = &d; 
-  pb->f(); 
-  d = (D*)pa; //cannot convert from pointer to base class 'A' to pointer to derived class 'D' because the base is virtual
-  pd = (D *)pb; 
-  pd->B::f(); 
-  d.C::f(); 
-	
+
+	A *pa = new D;
+	pa->B::f();
+	//probando(pb);
 	return 0; 
 	
 
