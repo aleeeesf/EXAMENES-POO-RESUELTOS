@@ -170,14 +170,18 @@ void Profesor_Asignatura::imparte(Grupo& grupo, Profesor& profesor)
 
 const set<Grupo*>& Profesor_Asignatura::impartidos(Profesor& profesor) 
 {
+
 	Profesores::iterator i = p.find(&profesor);
-	return i->second;
+	if(i != p.end()) return i->second;
+	else return {};
 }
 
 const Profesor* Profesor_Asignatura::impartidos(Grupo& grupo) 
 {
 	Grupos::iterator i = g.find(&grupo);
-	return i->second;
+	
+	if(i != g.end()) return i->second;
+	else return nullptr;
 }
 
 

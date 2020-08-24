@@ -102,36 +102,37 @@ int main(){
 //}
 
 /*	EJERCICIO 4		*/
-/*
+
 struct B {
 	
 	 B() { std::cout << "Constructor de B\n"; }
  	 ~B() { std::cout << "Destructor de B\n"; }
+ 	 virtual void f(){cout<<"f() de B"<<endl;}
  	
 };
 
 struct D: B {
 	
  	D() { std::cout << "Constructor de D\n"; }
- 	~D() { std::cout << "Destructor de D\n"; }
- 	
+ 	virtual ~D() { std::cout << "Destructor de D\n"; }
+ 	void f(){cout<<"f() de D"<<endl;}
 };
-/*
+
 struct E: D {
 	
  	E() { std::cout << "Constructor de E\n"; }
  	~E() { std::cout << "Destructor de E\n"; }
- 	
+ 	void f(){cout<<"f() de E"<<endl;}
 };
-*/
-/*
+
+
 int main() {
 	
  	B *pb = new E;
  	delete pb;
  	
 }
-*/
+
 
 
 /*	EJERCICIO 5	*/

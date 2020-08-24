@@ -20,7 +20,7 @@ class A {
 		void f() {
 			cout << "Metodo f() de A" << endl;
 		}
-		virtual ~A(){}
+		~A(){cout<<"Destructor de A"<<endl;}
 };
 
 class B: virtual public A {
@@ -33,7 +33,7 @@ class B: virtual public A {
 		void f() {
 			cout << "Metodo f() de B" << endl;
 		}
-		virtual ~B(){}
+		virtual ~B(){cout<<"Destructor de B"<<endl;}
 };
 
 class C: virtual public A {
@@ -46,7 +46,7 @@ class C: virtual public A {
 		void f() {
 			cout << "Metodo f() de C" << endl;
 		}
-		virtual ~C(){}
+		~C(){cout<<"Destructor de C"<<endl;}
 };
 
 class D: public B, public C {
@@ -55,8 +55,9 @@ class D: public B, public C {
 		D(): x("D") {
 			cout << "Constructor de D" << endl;
 		}
+		~D(){cout<<"Destructor de D"<<endl;}
 };
-
+/*
 void probando(A* a){
 	
 	//if (A *a = dynamic_cast<A*>(a)) cout<<"Es A";
@@ -65,12 +66,11 @@ void probando(A* a){
 	if (D *d = dynamic_cast<D*>(a)) cout<<"Es D";
 	
 }
-
+*/
 int main(){
 
-	A *pa = new D;
-	pa->B::f();
-	//probando(pb);
+	B *pa = new D;
+	delete pa;
 	return 0; 
 	
 
